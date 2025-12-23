@@ -1,0 +1,882 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nurettin Mete Bayındır | Kişisel Hikâye</title>
+  <meta name="description" content="Nurettin Mete Bayındır - kişisel hikâye, eğitim, şu an ne yapıyorum ve aktif iş birlikleri." />
+
+  <style>
+    :root{
+      --bg: #0b0f17;
+      --card: rgba(255,255,255,.06);
+      --card2: rgba(255,255,255,.09);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.68);
+      --line: rgba(255,255,255,.14);
+      --shadow: 0 18px 60px rgba(0,0,0,.45);
+      --radius: 18px;
+      --radius2: 24px;
+
+      --a: #7c3aed;   /* mor */
+      --b: #22c55e;   /* yeşil */
+      --c: #06b6d4;   /* cyan */
+      --d: #f59e0b;   /* amber */
+    }
+
+    *{ box-sizing: border-box; }
+    html, body{ height: 100%; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji";
+      color: var(--text);
+      background:
+        radial-gradient(1000px 600px at 15% 10%, rgba(124,58,237,.18), transparent 60%),
+        radial-gradient(900px 500px at 80% 15%, rgba(6,182,212,.14), transparent 60%),
+        radial-gradient(900px 600px at 40% 90%, rgba(34,197,94,.10), transparent 60%),
+        linear-gradient(180deg, #070a10, var(--bg));
+      overflow-x:hidden;
+    }
+
+    a{ color: inherit; text-decoration: none; }
+    .container{
+      width: min(1120px, calc(100% - 36px));
+      margin: 0 auto;
+    }
+
+    /* Topbar */
+    .topbar{
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(12px);
+      background: rgba(11,15,23,.55);
+      border-bottom: 1px solid var(--line);
+    }
+    .topbar .inner{
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      padding: 14px 0;
+      gap: 12px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      min-width: 220px;
+    }
+    .logoMark{
+      width: 38px; height: 38px;
+      border-radius: 12px;
+      background:
+        radial-gradient(12px 12px at 30% 30%, rgba(255,255,255,.20), transparent 60%),
+        linear-gradient(135deg, rgba(124,58,237,.95), rgba(6,182,212,.75));
+      box-shadow: 0 12px 30px rgba(124,58,237,.18);
+      border: 1px solid rgba(255,255,255,.14);
+    }
+    .brand .t{
+      display:flex; flex-direction:column; line-height: 1.1;
+    }
+    .brand .t strong{ font-size: 14px; letter-spacing: .2px;}
+    .brand .t span{ font-size: 12px; color: var(--muted); }
+
+    nav{
+      display:flex;
+      align-items:center;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+    nav a{
+      font-size: 13px;
+      color: var(--muted);
+      padding: 8px 10px;
+      border-radius: 12px;
+      border: 1px solid transparent;
+      transition: .2s ease;
+    }
+    nav a:hover{
+      color: var(--text);
+      background: rgba(255,255,255,.06);
+      border-color: rgba(255,255,255,.12);
+    }
+    .cta{
+      display:flex; align-items:center; gap: 10px;
+    }
+    .btn{
+      cursor:pointer;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      padding: 9px 12px;
+      border-radius: 14px;
+      font-weight: 600;
+      font-size: 13px;
+      transition: .2s ease;
+    }
+    .btn:hover{ transform: translateY(-1px); background: rgba(255,255,255,.09); }
+    .btn.primary{
+      border-color: rgba(124,58,237,.42);
+      background: linear-gradient(135deg, rgba(124,58,237,.9), rgba(6,182,212,.55));
+      box-shadow: 0 16px 40px rgba(124,58,237,.16);
+    }
+    .btn.primary:hover{ filter: brightness(1.04); }
+
+    /* Hero */
+    header.hero{
+      padding: 44px 0 18px;
+    }
+    .heroGrid{
+      display:grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 16px;
+      align-items: stretch;
+    }
+    .heroCard{
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border-radius: var(--radius2);
+      padding: 24px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow:hidden;
+    }
+    .heroCard:before{
+      content:"";
+      position:absolute;
+      inset: -2px;
+      background:
+        radial-gradient(700px 260px at 20% 0%, rgba(124,58,237,.22), transparent 60%),
+        radial-gradient(700px 260px at 80% 0%, rgba(6,182,212,.16), transparent 60%);
+      z-index:0;
+    }
+    .heroCard > *{ position: relative; z-index: 1; }
+
+    .kicker{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      font-size: 12px;
+      color: var(--muted);
+      padding: 6px 10px;
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 999px;
+      background: rgba(0,0,0,.16);
+      width: fit-content;
+    }
+    .dot{
+      width: 8px; height: 8px;
+      border-radius: 999px;
+      background: var(--b);
+      box-shadow: 0 0 0 4px rgba(34,197,94,.12);
+    }
+    h1{
+      margin: 12px 0 8px;
+      font-size: clamp(26px, 4.2vw, 42px);
+      letter-spacing: -0.6px;
+      line-height: 1.1;
+    }
+    .subtitle{
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.6;
+      max-width: 62ch;
+    }
+    .heroActions{
+      margin-top: 16px;
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .chips{
+      margin-top: 14px;
+      display:flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .chip{
+      font-size: 12px;
+      color: rgba(255,255,255,.78);
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.05);
+      padding: 7px 10px;
+      border-radius: 999px;
+    }
+
+    .sideCard{
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.05);
+      border-radius: var(--radius2);
+      padding: 18px;
+      box-shadow: var(--shadow);
+      display:flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 14px;
+    }
+    .statRow{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .stat{
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.16);
+      border-radius: 16px;
+      padding: 12px;
+    }
+    .stat strong{ display:block; font-size: 16px; }
+    .stat span{ display:block; color: var(--muted); font-size: 12px; margin-top: 4px; }
+
+    .mini{
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.14);
+      border-radius: 16px;
+      padding: 12px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    /* Sections */
+    section{
+      padding: 18px 0;
+    }
+    .sectionTitle{
+      display:flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      margin: 16px 0 12px;
+    }
+    .sectionTitle h2{
+      margin: 0;
+      font-size: 18px;
+      letter-spacing: -0.2px;
+    }
+    .sectionTitle p{
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .grid{
+      display:grid;
+      gap: 12px;
+    }
+    .grid.two{ grid-template-columns: 1fr 1fr; }
+    .grid.three{ grid-template-columns: repeat(3, 1fr); }
+
+    .card{
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.05);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: 0 12px 40px rgba(0,0,0,.25);
+    }
+    .card h3{
+      margin: 0 0 8px;
+      font-size: 15px;
+      letter-spacing: -0.2px;
+    }
+    .card p{
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    /* Timeline */
+    .timeline{
+      position: relative;
+      padding-left: 18px;
+    }
+    .timeline:before{
+      content:"";
+      position:absolute;
+      left: 6px;
+      top: 6px;
+      bottom: 6px;
+      width: 2px;
+      background: linear-gradient(180deg, rgba(124,58,237,.6), rgba(6,182,212,.5), rgba(34,197,94,.45));
+      opacity: .65;
+      border-radius: 99px;
+    }
+    .tlItem{
+      position: relative;
+      padding: 12px 12px 12px 16px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.14);
+      border-radius: 16px;
+      margin: 10px 0;
+    }
+    .tlItem:before{
+      content:"";
+      position:absolute;
+      left: -18px;
+      top: 18px;
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.14);
+      border: 2px solid rgba(124,58,237,.65);
+      box-shadow: 0 0 0 6px rgba(124,58,237,.12);
+    }
+    .tlItem .when{
+      font-size: 12px;
+      color: rgba(255,255,255,.72);
+      display:inline-flex;
+      gap: 8px;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+    .badge{
+      font-size: 11px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+      color: rgba(255,255,255,.78);
+    }
+
+    /* Brands */
+    .brandCard{
+      position: relative;
+      overflow:hidden;
+      min-height: 150px;
+    }
+    .brandCard:before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background:
+        radial-gradient(340px 220px at 20% 20%, rgba(124,58,237,.20), transparent 60%),
+        radial-gradient(340px 220px at 80% 10%, rgba(6,182,212,.14), transparent 60%),
+        radial-gradient(340px 220px at 30% 100%, rgba(34,197,94,.12), transparent 60%);
+      z-index:0;
+    }
+    .brandCard > *{ position: relative; z-index: 1; }
+
+    .pillRow{
+      margin-top: 10px;
+      display:flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .pill{
+      font-size: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.12);
+      color: rgba(255,255,255,.78);
+    }
+
+    /* Footer */
+    footer{
+      padding: 24px 0 44px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .footerInner{
+      display:flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      border-top: 1px solid var(--line);
+      padding-top: 16px;
+      flex-wrap: wrap;
+    }
+
+    /* Responsive */
+    @media (max-width: 920px){
+      .heroGrid{ grid-template-columns: 1fr; }
+      .grid.two{ grid-template-columns: 1fr; }
+      .grid.three{ grid-template-columns: 1fr; }
+      .brand{ min-width: unset; }
+      nav{ justify-content: flex-start; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="container">
+      <div class="inner">
+        <a class="brand" href="#top" aria-label="Anasayfa">
+          <div class="logoMark" aria-hidden="true"></div>
+          <div class="t">
+            <strong>Nurettin Mete Bayındır</strong>
+            <span>Kişisel hikâye • Tasarım • Web</span>
+          </div>
+        </a>
+
+        <nav aria-label="Sayfa menüsü">
+          <a href="#hikaye">Hikâyem</a>
+          <a href="#suan">Şu an ne yapıyorum</a>
+          <a href="#egitim">Eğitim</a>
+          <a href="#markalar">Aktif iş birlikleri</a>
+          <a href="#iletisim">İletişim</a>
+        </nav>
+
+        <div class="cta">
+          <button class="btn" id="copyLinkBtn" type="button">Linki Kopyala</button>
+          <a class="btn primary" href="#iletisim">Bana Ulaş</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main id="top" class="container">
+    <header class="hero" aria-label="Giriş">
+      <div class="heroGrid">
+        <div class="heroCard">
+          <div class="kicker"><span class="dot" aria-hidden="true"></span> Aktif: Sosyal medya danışmanlığı • 3 marka ile iş birliği</div>
+
+          <h1>Yazılımdan tasarıma, tasarımdan markalara…</h1>
+          <p class="subtitle">
+            Ben <strong>Nurettin Mete Bayındır</strong>. 15 yaşımda Arduino ile başlayan merakım,
+            Python ve web kodlama ile gelişti. Bugün tasarım + dijital dünyayı birleştirerek
+            markalara sosyal medya ve dijital tarafında değer katıyorum.
+          </p>
+
+          <div class="heroActions">
+            <a class="btn primary" href="#hikaye">Hikâyeyi Oku</a>
+            <a class="btn" href="#markalar">Markaları Gör</a>
+            <button class="btn" type="button" id="downloadBtn">CV (Metin) İndir</button>
+          </div>
+
+          <div class="chips" aria-label="Öne çıkan etiketler">
+            <span class="chip">Arduino</span>
+            <span class="chip">Python</span>
+            <span class="chip">Web Kodlama</span>
+            <span class="chip">Tasarım</span>
+            <span class="chip">Sosyal Medya Danışmanlığı</span>
+          </div>
+        </div>
+
+        <aside class="sideCard" aria-label="Özet kartı">
+          <div class="statRow">
+            <div class="stat">
+              <strong>2024 Aralık</strong>
+              <span>Sosyal medya danışmanlığına başlangıç</span>
+            </div>
+            <div class="stat">
+              <strong>3 Marka</strong>
+              <span>Aktif iş birliği</span>
+            </div>
+          </div>
+
+          <div class="mini">
+            <strong style="color:rgba(255,255,255,.92)">Kısa özet</strong><br/>
+            Teknik merak (Arduino/Python) + görsel üretim (tasarım) + uygulama (web).
+            Bu üçlü yaklaşımı markaların büyüme hedefiyle birleştiriyorum.
+          </div>
+
+          <div class="mini">
+            <strong style="color:rgba(255,255,255,.92)">Odak</strong><br/>
+            İçerik planı, kreatif tasarım, kampanya dili, reklam uyumu ve marka tutarlılığı.
+          </div>
+        </aside>
+      </div>
+    </header>
+
+    <section id="hikaye" aria-label="Hikâyem">
+      <div class="sectionTitle">
+        <h2>Hikâyem</h2>
+        <p>Başlangıçtan bugüne kısa ve net.</p>
+      </div>
+
+      <div class="card timeline">
+        <div class="tlItem">
+          <div class="when">
+            <span class="badge">15 yaş</span>
+            <span>Arduino ile ilk tanışma</span>
+          </div>
+          <p>
+            Her şey okul grubuna gelen “Arduino eğitimi ile ilgilenenler bizimle iletişime geçebilir” mesajıyla başladı.
+            O an, teknolojiye dokunmanın heyecanını yaşadım.
+          </p>
+        </div>
+
+        <div class="tlItem">
+          <div class="when">
+            <span class="badge">Lise</span>
+            <span>Python merakı</span>
+          </div>
+          <p>
+            Bilişim derslerinde Python dikkatimi çekti. Yaklaşık 1 yıl Python ile uğraştım.
+            Sonra bir süre yazılımda ilerlemekten vazgeçmiş gibi oldum.
+          </p>
+        </div>
+
+        <div class="tlItem">
+          <div class="when">
+            <span class="badge">Dönüm noktası</span>
+            <span>Tasarım + web</span>
+          </div>
+          <p>
+            Kendi başıma tasarımlarla ilgilenmeye başladım ve ardından web kodlama ile tanışma fırsatı buldum.
+            İkisini aynı anda geliştirirken “üretmek” benim için daha anlamlı hale geldi.
+          </p>
+        </div>
+
+        <div class="tlItem">
+          <div class="when">
+            <span class="badge">Destek</span>
+            <span>Sultan Taşdoğan</span>
+          </div>
+          <p>
+            Yengem <strong>Sultan Taşdoğan</strong> bana sosyal medya yönetimi yapmamı söyledi ve beni destekledi.
+            Bu destek, istikrarlı şekilde ilerlememi sağladı.
+          </p>
+        </div>
+
+        <div class="tlItem">
+          <div class="when">
+            <span class="badge">2024 Aralık</span>
+            <span>Sosyal medya danışmanlığı</span>
+          </div>
+          <p>
+            2024 Aralık ayında sosyal medya danışmanlığıyla tanıştım.
+            Bugün <strong>3 marka</strong> ile aktif iş birliği içerisinde süreci sürdürüyorum.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="suan" aria-label="Şu an ne yapıyorum">
+      <div class="sectionTitle">
+        <h2>Şu an ne yapıyorum</h2>
+        <p>Bugünkü odağım ve çalışma biçimim.</p>
+      </div>
+
+      <div class="grid two">
+        <div class="card">
+          <h3>3 marka ile aktif iş birliği</h3>
+          <p>
+            Markaların sosyal medya süreçlerinde içerik dili, görsel tasarım, kampanya kurgusu ve
+            reklam uyumuna odaklanıyorum. Amaç: <strong>tutarlı marka algısı + satış odaklı iletişim</strong>.
+          </p>
+          <div class="pillRow">
+            <span class="pill">İçerik planı</span>
+            <span class="pill">Tasarım üretimi</span>
+            <span class="pill">Kampanya metni</span>
+            <span class="pill">Reklam kreatifi</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Tasarım ve web’i birlikte büyütüyorum</h3>
+          <p>
+            Tasarımda öğrendiklerimi web üzerinde hayata geçiriyorum.
+            Bu sayede içerikten görsele, landing page’den iletişim metnine kadar uçtan uca düşünerek üretiyorum.
+          </p>
+          <div class="pillRow">
+            <span class="pill">UI/UX yaklaşımı</span>
+            <span class="pill">Web sayfası üretimi</span>
+            <span class="pill">Marka dili</span>
+            <span class="pill">Hızlı prototipleme</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="egitim" aria-label="Eğitim">
+      <div class="sectionTitle">
+        <h2>Eğitim</h2>
+        <p>Akademik yolculuğum.</p>
+      </div>
+
+      <div class="card">
+        <h3>Yönetim Bilişim Sistemleri • Üniversite</h3>
+        <p>
+          <strong>2024 Haziran</strong> ayında Yönetim Bilişim Sistemleri yazarak üniversite hayatıma devam ediyorum.
+          Teknik bakış açımı iş dünyası perspektifiyle birleştirmeyi hedefliyorum.
+        </p>
+        <div class="pillRow">
+          <span class="pill">Bilişim</span>
+          <span class="pill">Yönetim</span>
+          <span class="pill">Dijital strateji</span>
+          <span class="pill">Ürün/Proje bakışı</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="markalar" aria-label="Aktif iş birlikleri">
+      <div class="sectionTitle">
+        <h2>Aktif iş birlikleri</h2>
+        <p>Şu anda birlikte çalıştığım markalar.</p>
+      </div>
+
+      <div class="grid three">
+        <article class="card brandCard">
+          <h3>AKADEMİSYEN ANNE ANAOKULU GAZİANTEP</h3>
+          <p>
+            Okulun dijital iletişiminde güven veren, sıcak ama profesyonel bir dil kurmaya odaklı içerik ve kreatif üretimi.
+          </p>
+          <div class="pillRow">
+            <span class="pill">Kurumsal dil</span>
+            <span class="pill">Duygusal bağ</span>
+            <span class="pill">Kampanya</span>
+          </div>
+        </article>
+
+        <article class="card brandCard">
+          <h3>AKADEMİSYEN ANNE ANAOKULU İZMİR</h3>
+          <p>
+            Sosyal medya yönetimi ve reklam odaklı içeriklerle, lokasyon hedefli büyümeyi destekleyen üretimler.
+          </p>
+          <div class="pillRow">
+            <span class="pill">Reklam kreatifi</span>
+            <span class="pill">İçerik planı</span>
+            <span class="pill">Marka tutarlılığı</span>
+          </div>
+        </article>
+
+        <article class="card brandCard">
+          <h3>PERDELERCE TEKSTİL</h3>
+          <p>
+            Ürün odaklı, fiyat/avantaj iletişimi güçlü, güven veren bir sunum diliyle sosyal medya içerik kurgusu.
+          </p>
+          <div class="pillRow">
+            <span class="pill">Ürün sunumu</span>
+            <span class="pill">Satış odak</span>
+            <span class="pill">Hızlı içerik</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="iletisim" aria-label="İletişim">
+      <div class="sectionTitle">
+        <h2>İletişim</h2>
+        <p>Formu doldurabilir ya da bilgileri kopyalayabilirsin.</p>
+      </div>
+
+      <div class="grid two">
+        <div class="card">
+          <h3>Hızlı mesaj</h3>
+          <p style="margin-bottom:12px">
+            Aşağıdaki form sadece örnek. İstersen Formspree/Google Forms ile bağlarız,
+            ya da direkt WhatsApp/Instagram yönlendirmesi koyarız.
+          </p>
+
+          <form id="contactForm">
+            <div style="display:grid; gap:10px">
+              <input class="input" name="name" placeholder="Ad Soyad" required />
+              <input class="input" name="topic" placeholder="Konu (örn: sosyal medya yönetimi)" required />
+              <textarea class="input" name="message" placeholder="Mesajın..." rows="4" required></textarea>
+              <button class="btn primary" type="submit">Mesaj Taslağı Oluştur</button>
+              <div id="formResult" style="color: var(--muted); font-size:13px; line-height:1.6"></div>
+            </div>
+          </form>
+        </div>
+
+        <div class="card">
+          <h3>Kopyala & kullan</h3>
+          <p>
+            Buraya e-posta / telefon / sosyal medya linklerini sonra ekleyebiliriz.
+            Şimdilik örnek bir “iletişim metni” ürettim.
+          </p>
+
+          <div class="mini" id="contactCopy" style="margin-top:12px">
+            Merhaba, ben Nurettin Mete Bayındır. Sosyal medya yönetimi ve kreatif içerik üretimi konusunda
+            görüşmek istiyorum. Uygun olduğunuz bir zamanda kısa bir görüşme yapabilir miyiz?
+          </div>
+
+          <div class="heroActions" style="margin-top:12px">
+            <button class="btn" type="button" id="copyTextBtn">Metni Kopyala</button>
+            <button class="btn" type="button" id="copySiteBtn">Site Linki Kopyala</button>
+          </div>
+
+          <div class="mini" style="margin-top:12px">
+            <strong style="color:rgba(255,255,255,.92)">Not:</strong>
+            Bu site tek dosyadır. İstersen alan adı + hosting (Plesk/Vercel) kurulumuna göre optimize edebilirim.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footerInner">
+        <div>© <span id="year"></span> Nurettin Mete Bayındır</div>
+        <div style="display:flex; gap:10px; flex-wrap:wrap">
+          <a class="chip" href="#top">Yukarı</a>
+          <a class="chip" href="#hikaye">Hikâye</a>
+          <a class="chip" href="#markalar">Markalar</a>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // Basit input stilleri için JS ile class ekle (tek dosya pratikliği)
+    for (const el of document.querySelectorAll("input, textarea")) {
+      el.classList.add("input");
+    }
+
+    // Input stilini JS ile eklemek (tek yerde kalsın)
+    const style = document.createElement("style");
+    style.textContent = `
+      .input{
+        width: 100%;
+        border: 1px solid rgba(255,255,255,.14);
+        background: rgba(0,0,0,.16);
+        color: rgba(255,255,255,.9);
+        border-radius: 14px;
+        padding: 10px 12px;
+        outline: none;
+        font-size: 14px;
+        transition: .2s ease;
+      }
+      .input:focus{
+        border-color: rgba(124,58,237,.55);
+        box-shadow: 0 0 0 6px rgba(124,58,237,.14);
+      }
+    `;
+    document.head.appendChild(style);
+
+    // Footer year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Smooth scrolling (native destek yoksa)
+    document.documentElement.style.scrollBehavior = "smooth";
+
+    async function copyToClipboard(text){
+      try{
+        await navigator.clipboard.writeText(text);
+        toast("Kopyalandı ✅");
+      }catch(e){
+        // fallback
+        const ta = document.createElement("textarea");
+        ta.value = text;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand("copy");
+        document.body.removeChild(ta);
+        toast("Kopyalandı ✅");
+      }
+    }
+
+    // Toast
+    let toastTimer;
+    function toast(msg){
+      let t = document.getElementById("toast");
+      if(!t){
+        t = document.createElement("div");
+        t.id = "toast";
+        t.style.position = "fixed";
+        t.style.left = "50%";
+        t.style.bottom = "18px";
+        t.style.transform = "translateX(-50%)";
+        t.style.padding = "10px 12px";
+        t.style.borderRadius = "14px";
+        t.style.border = "1px solid rgba(255,255,255,.16)";
+        t.style.background = "rgba(0,0,0,.55)";
+        t.style.backdropFilter = "blur(12px)";
+        t.style.color = "rgba(255,255,255,.92)";
+        t.style.fontSize = "13px";
+        t.style.boxShadow = "0 18px 60px rgba(0,0,0,.35)";
+        t.style.zIndex = "999";
+        document.body.appendChild(t);
+      }
+      t.textContent = msg;
+      t.style.opacity = "1";
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(()=> t.style.opacity = "0", 1800);
+    }
+
+    // Copy buttons
+    document.getElementById("copyTextBtn").addEventListener("click", () => {
+      const text = document.getElementById("contactCopy").innerText.trim();
+      copyToClipboard(text);
+    });
+
+    document.getElementById("copySiteBtn").addEventListener("click", () => {
+      copyToClipboard(location.href);
+    });
+
+    document.getElementById("copyLinkBtn").addEventListener("click", () => {
+      copyToClipboard(location.href);
+    });
+
+    // Contact form -> message draft (client-side)
+    document.getElementById("contactForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const fd = new FormData(e.target);
+      const name = (fd.get("name") || "").toString().trim();
+      const topic = (fd.get("topic") || "").toString().trim();
+      const message = (fd.get("message") || "").toString().trim();
+
+      const draft =
+`Merhaba,
+Ben ${name}. ${topic} hakkında sizinle görüşmek istiyorum.
+
+Mesajım:
+${message}
+
+Uygun olduğunuz bir zamanda kısa bir görüşme yapabilir miyiz?
+Teşekkürler.
+— Nurettin Mete Bayındır`;
+
+      const box = document.getElementById("formResult");
+      box.innerHTML = `<div style="margin-top:6px; color: rgba(255,255,255,.9); font-weight:700">Taslak hazır</div>
+                       <div style="margin-top:8px; white-space:pre-wrap; border:1px solid rgba(255,255,255,.12); background: rgba(0,0,0,.14); border-radius: 14px; padding: 10px 12px;">${escapeHtml(draft)}</div>
+                       <div style="margin-top:10px; display:flex; gap:10px; flex-wrap:wrap">
+                         <button class="btn" type="button" id="copyDraftBtn">Taslağı Kopyala</button>
+                       </div>`;
+
+      setTimeout(() => {
+        const btn = document.getElementById("copyDraftBtn");
+        if(btn){
+          btn.addEventListener("click", () => copyToClipboard(draft));
+        }
+      }, 0);
+    });
+
+    // CV text download (simple .txt)
+    document.getElementById("downloadBtn").addEventListener("click", () => {
+      const content =
+`Nurettin Mete Bayındır
+
+Kısa Biyografi
+- 15 yaşında Arduino ile yazılım dünyasıyla tanıştı.
+- Lisede Python’a ilgi duydu ve yaklaşık 1 yıl aktif çalıştı.
+- Sonrasında tasarım üretimine yöneldi; web kodlama ile tasarımı birlikte geliştirdi.
+- Sultan Taşdoğan’ın desteğiyle sosyal medya yönetimi alanında ilerledi.
+- 2024 Aralık ayında sosyal medya danışmanlığına başladı.
+- Bugün 3 marka ile aktif iş birliği içinde.
+
+Eğitim
+- 2024 Haziran: Yönetim Bilişim Sistemleri (üniversite) - eğitimine devam ediyor.
+
+Aktif İş Birlikleri
+- Akademisyen Anne Anaokulu Gaziantep
+- Akademisyen Anne Anaokulu İzmir
+- Perdelerce Tekstil
+`;
+      const blob = new Blob([content], { type: "text/plain;charset=utf-8" });
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "Nurettin-Mete-Bayindir-CV.txt";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(a.href);
+      toast("CV indirildi ✅");
+    });
+
+    function escapeHtml(str){
+      return str
+        .replaceAll("&","&amp;")
+        .replaceAll("<","&lt;")
+        .replaceAll(">","&gt;")
+        .replaceAll('"',"&quot;")
+        .replaceAll("'","&#039;");
+    }
+  </script>
+</body>
+</html>
